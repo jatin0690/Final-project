@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #cbdbff;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+/* Only center auth pages like login/register */
+.centered-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Responsive container for forms */
+.form-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 1.5rem;
+  margin: auto;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Titles and subtitles */
+.title,
+.slogan {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  width: 100%;
+}
+
+.auth-image {
+  width: 100%;
+}
+
+.alert {
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  margin-bottom: 1.5rem;
+}
+
+.username {
+  text-transform: capitalize;
+}
+
+.profile-btn {
+  width: 100%;
+  max-width: 500px;
+}
+
+.profile-card {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+/* Dark mode support (used with Tailwind dark class) */
+body.dark {
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+/* Optional card class */
+.card {
+  padding: 2em;
+}
+
+/* Documentation footer note */
+.read-the-docs {
+  color: #888;
+}
+
+/* Optional: spinning logo animation */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
