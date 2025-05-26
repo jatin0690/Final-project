@@ -5,6 +5,9 @@ import Filters from "./Filters";
 import WidgetLayout from "./WidgetLayout";
 import { useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Dashboard = () => {
   const [assets, setAssets] = useState([]);
@@ -32,7 +35,7 @@ const Dashboard = () => {
           params: {
             vs_currency: "usd",
             order: "market_cap_desc",
-            per_page: 10,
+            per_page: 40,
             page: 1,
             sparkline: true,
             price_change_percentage: "24h",
@@ -54,6 +57,7 @@ const Dashboard = () => {
   };
 
   return (
+    
     <div className="mt-[-70px] w-full min-h-screen bg-gradient-to-tr from-blue-50 via-white to-purple-100 dark:from-gray-900 dark:via-gray-950 dark:to-black transition-colors duration-300">
       
       {/* Navbar */}
@@ -66,8 +70,10 @@ const Dashboard = () => {
         </button>
       </header>
       <nav className="w-full bg-white dark:bg-gray-800 shadow-md py-4 px-6 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0">
-        <div className="text-2xl font-bold text-gray-800 dark:text-white">
+        <div className="text-2xl cursor-pointer font-bold text-gray-800 dark:text-white">
+          <Link to="/">
           📈 CryptoDash
+          </Link>
         </div>
 
         <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-end">
@@ -81,6 +87,12 @@ const Dashboard = () => {
           >
             🚪 Logout
           </button>
+          <Link
+  to="/my-assets"
+  className="px-3 py-1.5 text-sm rounded-md bg-blue-600 text-white hover:bg-blue-500 transition"
+>
+  💼 My Assets
+</Link>
           <button
             onClick={() => setDarkMode(!darkMode)}
             className="px-3 py-1.5 text-sm rounded-md text-white bg-gray-800 dark:bg-gray-200 dark:text-gray-900 hover:bg-gray-700 dark:hover:bg-gray-400 transition"
@@ -116,6 +128,7 @@ const Dashboard = () => {
           <WidgetLayout data={filteredAssets} />
         </section>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
     </div>
   );
 };

@@ -4,6 +4,8 @@ import Dashboard from './components/Dashboard';
 import Login from './Auth/Login';
 import Register from "./Auth/Register";
 import { useAuth } from './contexts/AuthContext';
+import MyAssets from "./components/MyAssets";
+
 
 function App() {
   // Set initial theme based on localStorage or default to light mode
@@ -47,6 +49,7 @@ function App() {
               isAuthenticated ? <Dashboard /> : <Navigate to="/login" />
             }
           />
+          <Route path="/my-assets" element={<MyAssets />} />
         </Routes>
       </Router>
     </div>
